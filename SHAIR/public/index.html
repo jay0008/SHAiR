@@ -1,0 +1,43 @@
+<!--
+Name: Cyril Abia
+Date: May 23rd 2021 
+Partner:  Worked alone  
+
+This is the index.html page is used to display all car manufacturers listed 
+on NHTSA as a button. When the manufacturer is selected it should display 
+all makes of that given manufacturer. A search bar and a button are also 
+included to get the year, make, and model of a vehicle given its VIN.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+        <!--import style sheet for search button-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SHAiR your car</title>
+    </head>
+    <body>
+        <!--Search bar and button for VIN section-->
+        <h1>Search VIN</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search.." id = "vin" name="search">
+            <button type="submit" onclick='getVin(document.querySelector("#vin").value)'><i class="fa fa-search" ></i></button>
+            <p id = 'vinID'></p>
+        </div>
+        <!--get and display car models data from index.JS file-->
+        <h1>Car Models</h1>
+        <p id = 'model'></p>
+        <!--get and display car manufacturers buttons from index.JS file-->
+        <h1>Car Manufacturers</h1>
+        <input type='button' onclick='getCars()' 
+        value='Display all car Manufacturers' />
+        <!--Quick refresh button-->
+        <button onClick="window.location.reload();">Refresh Page</button>
+        <p id = 'cars'></p>
+        <br>
+    </body>
+    <!--import script from index.JS file-->
+    <script type="text/javascript" src="./index.js"></script>
+</html>
